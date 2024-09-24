@@ -1,0 +1,12 @@
+To, Assignment Name, Value
+hex_digit[0], Location, PIN_AB27
+hex_digit[1], Location, PIN_AC26
+hex_digit[2], Location, PIN_AD26
+hex_digit[3], Location, PIN_AB26
+hex_segments[0], Location, PIN_AD18
+hex_segments[1], Location, PIN_AC18
+hex_segments[2], Location, PIN_AB18
+hex_segments[3], Location, PIN_AH19
+hex_segments[4], Location, PIN_AG19
+hex_segments[5], Location, PIN_AF18
+hex_segments[6], Location, PIN_AH18
