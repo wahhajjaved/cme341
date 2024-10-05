@@ -1,0 +1,14 @@
+Quartus Prime Archive log --	/home/.engr-ece/muj975/cme341/template_project.qarlog
+
+Archive:	/home/.engr-ece/muj975/cme341/template_project.qar
+Date:		Fri Oct  4 18:33:05 2024
+Quartus Prime		22.1std.2 Build 922 07/20/2023 SC Standard Edition
+
+	=========== Files Selected: ===========
+/home/.engr-ece/muj975/cme341/template_project.qpf
+/home/.engr-ece/muj975/cme341/template_project.qsf
+/opt/intelFPGA/22.1.2/quartus/linux64/assignment_defaults.qdf
+	======= Total: 3 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

@@ -1,0 +1,7 @@
+|set_clear_latch
+n_set => nand1.IN1
+n_clear => nand2.IN0
+q <= q.DB_MAX_OUTPUT_PORT_TYPE
+n_q <= nand2.DB_MAX_OUTPUT_PORT_TYPE
+
+

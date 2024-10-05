@@ -1,0 +1,34 @@
+[ Creating a New Project ]
+
+- Each question needs its own project
+- In Project Type, select Empty Project
+- Skip Add Files
+- Device family is Cyclone IV E
+- Device name is EP4CE115F29C7
+- In EDA Tool Settings, for Simulation choose Questa Intel FPGA and Verilog HDL.
+    Leave the rest to None
+- Click Finish to create the project
+- From the Assignments menu at the top, open the Settings.
+- Under EDA Tool Settings, in Simulation, click on More EDA Netlist Writer Settings
+- Set Generate function simulation netlist to Off
+- When adding new files, select SystemVerilog HDL File
+
+
+[ Creating a New Questasim Project ]
+
+- Use File menu to create new project
+- Set the project location to <quartus_project>/simulation/questa
+- Project Name can be the same as the verilog module being tested
+- Add the main .vo file to the project. This contains the timing model of the circuit
+- A .sv file containing the test code will also need to be written
+
+
+[ Questasim Simulation ]
+
+- Compile the files
+- In the Simulate menu, click Start Simulation
+- Expand work and select the test file
+- Enable optimizations
+- In Optimization Options, select Apply full visibility to all modules(full debug mode)
+- In the libraries tab, add altera_mf_ver, altera_ver, and cycloneive_ver
+- Run simulation
