@@ -5,10 +5,15 @@ module student_circuit_Q1 (
 	output reg  [7:0] cct_output
 );
 
-	always @ *
-		if (clear)
-			cct_output  = 8'H0;
-		else
-			cct_output  = cct_input;
+reg [7:0] ring_counter;
+
+always @ (posedge clk)
+	if (clear || ring_counter == 8'b0000_0001 )
+		ring_counter  = 8'b1000_0000;
+	else
+		ring_counter  = ring_counter >> 1;
+
+always @ *
+	cct_output = ring_counter;
 
 endmodule

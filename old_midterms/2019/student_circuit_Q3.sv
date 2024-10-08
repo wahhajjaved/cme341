@@ -4,11 +4,9 @@ module student_circuit_Q3 (
 	input wire  [7:0] cct_input,
 	output reg  [7:0] cct_output
 );
-
+	integer i;
 	always @ *
-		if (clear)
-			cct_output  = 8'H0;
-		else
-			cct_output  = cct_input;
+		for (i = 0; i < 8; i++)
+			cct_output[i]  = cct_input[7-i];
 
 endmodule

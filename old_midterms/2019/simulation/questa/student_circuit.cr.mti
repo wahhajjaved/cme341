@@ -1,0 +1,16 @@
+/home/.engr-ece/muj975/cme341/old_midterms/2019/simulation/questa/student_circuit.vo {1 {vlog -work work -vopt -stats=none /home/.engr-ece/muj975/cme341/old_midterms/2019/simulation/questa/student_circuit.vo
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module student_circuit
+-- Compiling module hard_block
+
+Top level modules:
+	student_circuit
+
+} {} {}} /home/.engr-ece/muj975/cme341/old_midterms/2019/simulation/questa/midterm_1_testbench.sv {1 {vlog -work work -vopt -sv -stats=none /home/.engr-ece/muj975/cme341/old_midterms/2019/simulation/questa/midterm_1_testbench.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module midterm_1_testbench
+
+Top level modules:
+	midterm_1_testbench
+
+} {} {}}
