@@ -36,18 +36,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "cct_input[0]",
-					"strict" : false
-				},
-				{
-					"name" : "clear",
-					"strict" : false
-				},
-				{
-					"name" : "cct_input[1]",
-					"strict" : false
-				},
-				{
 					"name" : "cct_input[2]",
 					"strict" : false
 				},

@@ -7,9 +7,17 @@ module student_circuit_Q5 (
 
 
 always @ *
-	if (clear)
-		cct_output  = 8'H0;
-	else
-		cct_output  = cct_input;
+	// cct_output  = {cct_input[7:6], cct_input[7:2] >> 2};
+	cct_output  = {
+		cct_input[7],
+		cct_input[6],
+		cct_input[7],
+		cct_input[6],
+		cct_input[5],
+		cct_input[4],
+		cct_input[3],
+		cct_input[2]
+
+		};
 
 endmodule
