@@ -4,19 +4,37 @@
 // a different circuit.
 
 module student_circuit_Q3 (
-  input wire        clk,
-  input wire        clear,
-  input wire  [7:0] cct_input,
-  output reg  [7:0] cct_output
+    input wire        clk,
+    input wire        clear,
+    input wire  [7:0] cct_input,
+    output reg  [7:0] cct_output
 );
 
-// initial circuit - should give 16'H622D in testbench for seed 8'HAA
-// (replace with a different circuit as directed in the preamble)
+reg [7:0] reg1;
+reg [7:0] reg2;
+reg [7:0] reg3;
 
-  always @ *
+always @ (posedge clk)
     if (clear)
-		  cct_output  = 8'H0;
+        reg1 = 8'b11;
     else
-      cct_output  = cct_input;
+        reg1 = cct_input;
+
+always @ (posedge clk)
+    if (clear)
+        reg2 = 8'b11;
+    else
+        reg2 = cct_input;
+
+always @ (posedge clk)
+    if (clear)
+        reg3 = 8'b0;
+    else
+        reg3 = reg2;
+
+always @ *
+    cct_output = reg3 ^ (reg1 ^ (cct_input + 8'd17));
+
+
 
 endmodule

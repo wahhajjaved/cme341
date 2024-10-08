@@ -32,3 +32,88 @@
 - In Optimization Options, select Apply full visibility to all modules(full debug mode)
 - In the libraries tab, add altera_mf_ver, altera_ver, and cycloneive_ver
 - Run simulation
+
+
+
+
+[ Hex to Binary ]
+
+1. Separate each hex digit. It represents a string of 4 binary digits.
+    Write the decimal equivalent below each digit
+
+    4   f   a
+    4   15  10
+
+2. Write 8, 4, 2, 1 below each hex digit. These are powers of 2 for bit
+    in the string of 4 binary digits
+
+    4       f       a
+    4       15      10
+    8421    8421    8421
+
+
+3. Determine which powers of two (8, 4, 2 or 1) sum up to hex digits.
+    Write 1 below the power that is used and 0 under power that isn't
+
+    4       f       a
+    4       15      10
+    8421    8421    8421
+    ____________________
+    0100    1111    1010
+
+
+4. (4FA)16 = (10011111010)2
+
+
+
+
+
+[ Binary to Hex ]
+
+1. Group binary string into groups of 4
+    10101010 = 1010 1010
+
+2. Write 8, 4, 2 and 1 below each group.
+    1010	1010
+    8421	8421
+
+3. Multiply the 8, 4, 2 and 1’s with the digit above.
+    1010	1010
+    8421	8421
+    ____________
+    8020	8020
+
+4. Add the products within each set of four.
+    8+0+2+0 = 10
+    8+0+2+0 = 10
+
+5. Write using hex symbols
+    10 = a
+    11 = b
+    12 = c
+    13 = d
+    14 = e
+    15 = f
+
+
+
+[ Binary - Hex Table ]
+
+    Hex 	Binary
+    ______________
+    0 	    0000
+    1 	    0001
+    2 	    0010
+    3 	    0011
+    4 	    0100
+    5 	    0101
+    6 	    0110
+    7 	    0111
+    8 	    1000
+    9 	    1001
+    A 	    1010
+    B 	    1011
+    C 	    1100
+    D 	    1101
+    E 	    1110
+    F 	    1111

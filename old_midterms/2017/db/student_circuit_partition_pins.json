@@ -40,10 +40,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "clear",
-					"strict" : false
-				},
-				{
 					"name" : "cct_input[1]",
 					"strict" : false
 				},
