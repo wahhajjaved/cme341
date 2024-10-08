@@ -30,7 +30,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "student_circuit")
-  (DATE "10/08/2024 12:34:33")
+  (DATE "10/08/2024 12:37:43")
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition")

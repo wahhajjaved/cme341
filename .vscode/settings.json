@@ -1,4 +1,5 @@
 {
     "workbench.tree.enableStickyScroll": false,
-    "editor.stickyScroll.scrollWithEditor": false
+    "editor.stickyScroll.scrollWithEditor": false,
+    "editor.renderWhitespace": "boundary"
 }
