@@ -30,7 +30,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "student_circuit")
-  (DATE "10/08/2024 12:37:43")
+  (DATE "10/08/2024 12:59:34")
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition")
@@ -42,8 +42,8 @@
     (INSTANCE cct_output\[0\]\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (3240:3240:3240) (3455:3455:3455))
-        (IOPATH i o (2928:2928:2928) (2886:2886:2886))
+        (PORT i (3069:3069:3069) (3272:3272:3272))
+        (IOPATH i o (2878:2878:2878) (2836:2836:2836))
       )
     )
   )
@@ -52,8 +52,8 @@
     (INSTANCE cct_output\[1\]\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (3142:3142:3142) (3344:3344:3344))
-        (IOPATH i o (2848:2848:2848) (2806:2806:2806))
+        (PORT i (3245:3245:3245) (3470:3470:3470))
+        (IOPATH i o (2858:2858:2858) (2816:2816:2816))
       )
     )
   )
@@ -62,8 +62,8 @@
     (INSTANCE cct_output\[2\]\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (3241:3241:3241) (3455:3455:3455))
-        (IOPATH i o (2938:2938:2938) (2896:2896:2896))
+        (PORT i (3155:3155:3155) (3343:3343:3343))
+        (IOPATH i o (2875:2875:2875) (2850:2850:2850))
       )
     )
   )
@@ -72,8 +72,8 @@
     (INSTANCE cct_output\[3\]\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (3116:3116:3116) (3312:3312:3312))
-        (IOPATH i o (2915:2915:2915) (2890:2890:2890))
+        (PORT i (3068:3068:3068) (3271:3271:3271))
+        (IOPATH i o (2898:2898:2898) (2856:2856:2856))
       )
     )
   )
@@ -82,8 +82,8 @@
     (INSTANCE cct_output\[4\]\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (3309:3309:3309) (3532:3532:3532))
-        (IOPATH i o (2878:2878:2878) (2836:2836:2836))
+        (PORT i (3115:3115:3115) (3312:3312:3312))
+        (IOPATH i o (2895:2895:2895) (2870:2870:2870))
       )
     )
   )
@@ -92,8 +92,8 @@
     (INSTANCE cct_output\[5\]\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (3093:3093:3093) (3303:3303:3303))
-        (IOPATH i o (2878:2878:2878) (2836:2836:2836))
+        (PORT i (3142:3142:3142) (3355:3355:3355))
+        (IOPATH i o (2898:2898:2898) (2856:2856:2856))
       )
     )
   )
@@ -102,8 +102,8 @@
     (INSTANCE cct_output\[6\]\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (3309:3309:3309) (3532:3532:3532))
-        (IOPATH i o (2888:2888:2888) (2846:2846:2846))
+        (PORT i (3121:3121:3121) (3335:3335:3335))
+        (IOPATH i o (2918:2918:2918) (2876:2876:2876))
       )
     )
   )
@@ -112,8 +112,8 @@
     (INSTANCE cct_output\[7\]\~output)
     (DELAY
       (ABSOLUTE
-        (PORT i (3093:3093:3093) (3303:3303:3303))
-        (IOPATH i o (2888:2888:2888) (2846:2846:2846))
+        (PORT i (3142:3142:3142) (3355:3355:3355))
+        (IOPATH i o (2898:2898:2898) (2856:2856:2856))
       )
     )
   )
@@ -122,7 +122,7 @@
     (INSTANCE cct_input\[2\]\~input)
     (DELAY
       (ABSOLUTE
-        (IOPATH i o (729:729:729) (835:835:835))
+        (IOPATH i o (669:669:669) (775:775:775))
       )
     )
   )
@@ -131,7 +131,7 @@
     (INSTANCE cct_input\[3\]\~input)
     (DELAY
       (ABSOLUTE
-        (IOPATH i o (689:689:689) (795:795:795))
+        (IOPATH i o (639:639:639) (745:745:745))
       )
     )
   )
@@ -140,7 +140,7 @@
     (INSTANCE cct_input\[4\]\~input)
     (DELAY
       (ABSOLUTE
-        (IOPATH i o (659:659:659) (765:765:765))
+        (IOPATH i o (660:660:660) (766:766:766))
       )
     )
   )
@@ -149,7 +149,7 @@
     (INSTANCE cct_input\[5\]\~input)
     (DELAY
       (ABSOLUTE
-        (IOPATH i o (700:700:700) (806:806:806))
+        (IOPATH i o (669:669:669) (775:775:775))
       )
     )
   )
@@ -158,7 +158,7 @@
     (INSTANCE cct_input\[6\]\~input)
     (DELAY
       (ABSOLUTE
-        (IOPATH i o (669:669:669) (775:775:775))
+        (IOPATH i o (690:690:690) (796:796:796))
       )
     )
   )
@@ -167,7 +167,7 @@
     (INSTANCE cct_input\[7\]\~input)
     (DELAY
       (ABSOLUTE
-        (IOPATH i o (649:649:649) (755:755:755))
+        (IOPATH i o (639:639:639) (745:745:745))
       )
     )
   )
