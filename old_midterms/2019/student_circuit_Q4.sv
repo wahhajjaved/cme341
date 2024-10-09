@@ -6,19 +6,19 @@ module student_circuit_Q4 (
 );
 
 
-// reg new_clock;
-// reg [7:0] counter;
+reg new_clock;
+reg [7:0] counter;
 
-// always @ *
-// 	new_clock = clk / 2;
+always @ *
+	new_clock = clk / 2;
 
-// always @ (posedge new_clock)
-// 	if (clear)
-// 		counter = 8'd0;
-// 	else
-// 		counter = counter + 1'd1;
+always @ (posedge new_clock)
+	if (clear)
+		counter = 8'd0;
+	else
+		counter = counter + 1'd1;
 
-// always @ *
-// 	cct_output = counter;
+always @ *
+	cct_output = counter;
 
 endmodule
