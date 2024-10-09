@@ -9,8 +9,8 @@ module student_circuit_Q4 (
 reg new_clock;
 reg [7:0] counter;
 
-always @ *
-	new_clock = clk / 2;
+always @ (posedge clk)
+	new_clock = ~new_clock;
 
 always @ (posedge new_clock)
 	if (clear)
