@@ -5,11 +5,15 @@ module student_circuit_Q2 (
 	output reg  [7:0] cct_output
 );
 
+reg [7:0] counter;
 
 always @ (posedge clk)
 	if (clear)
-		cct_output = 8'H0;
+		counter = 8'H0;
 	else
+		counter = counter + 8'd3;
 
+always @ *
+	cct_output = counter;
 
 endmodule

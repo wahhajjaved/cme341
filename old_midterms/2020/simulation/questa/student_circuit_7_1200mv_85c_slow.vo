@@ -1,4 +1,4 @@
-// Copyright (C) 2023  Intel Corporation. All rights reserved.
+// Copyright (C) 2024  Intel Corporation. All rights reserved.
 // Your use of Intel Corporation's design tools, logic functions 
 // and other software and tools, and any partner logic 
 // functions, and any output files from any of the foregoing 
@@ -15,9 +15,9 @@
 
 // VENDOR "Altera"
 // PROGRAM "Quartus Prime"
-// VERSION "Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition"
+// VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
 
-// DATE "10/09/2024 14:26:30"
+// DATE "10/09/2024 16:21:14"
 
 // 
 // Device: Altera EP4CE115F29C7 Package FBGA780
@@ -91,10 +91,10 @@ wire \cct_input[7]~input_o ;
 wire \cct_input[5]~input_o ;
 wire \cct_input[4]~input_o ;
 wire \cct_input[6]~input_o ;
-wire \the_cct|or1~0_combout ;
+wire \the_cct|WideOr0~0_combout ;
 wire \cct_input[0]~input_o ;
 wire \the_cct|cct_output[0]~0_combout ;
-wire \the_cct|and1~0_combout ;
+wire \the_cct|WideAnd0~0_combout ;
 wire \the_cct|cct_output[0]~1_combout ;
 wire \cct_input[1]~input_o ;
 wire \the_cct|mux1[1]~0_combout ;
@@ -270,20 +270,20 @@ defparam \cct_input[6]~input .simulate_z_as = "z";
 // synopsys translate_on
 
 // Location: LCCOMB_X7_Y1_N24
-cycloneive_lcell_comb \the_cct|or1~0 (
+cycloneive_lcell_comb \the_cct|WideOr0~0 (
 // Equation(s):
-// \the_cct|or1~0_combout  = (\cct_input[7]~input_o ) # ((\cct_input[5]~input_o ) # ((\cct_input[4]~input_o ) # (\cct_input[6]~input_o )))
+// \the_cct|WideOr0~0_combout  = (\cct_input[7]~input_o ) # ((\cct_input[5]~input_o ) # ((\cct_input[4]~input_o ) # (\cct_input[6]~input_o )))
 
 	.dataa(\cct_input[7]~input_o ),
 	.datab(\cct_input[5]~input_o ),
 	.datac(\cct_input[4]~input_o ),
 	.datad(\cct_input[6]~input_o ),
 	.cin(gnd),
-	.combout(\the_cct|or1~0_combout ),
+	.combout(\the_cct|WideOr0~0_combout ),
 	.cout());
 // synopsys translate_off
-defparam \the_cct|or1~0 .lut_mask = 16'hFFFE;
-defparam \the_cct|or1~0 .sum_lutc_input = "datac";
+defparam \the_cct|WideOr0~0 .lut_mask = 16'hFFFE;
+defparam \the_cct|WideOr0~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: IOIBUF_X9_Y0_N1
@@ -299,10 +299,10 @@ defparam \cct_input[0]~input .simulate_z_as = "z";
 // Location: LCCOMB_X6_Y1_N24
 cycloneive_lcell_comb \the_cct|cct_output[0]~0 (
 // Equation(s):
-// \the_cct|cct_output[0]~0_combout  = (\the_cct|or1~0_combout  & (\cct_input[2]~input_o )) # (!\the_cct|or1~0_combout  & ((\cct_input[0]~input_o )))
+// \the_cct|cct_output[0]~0_combout  = (\the_cct|WideOr0~0_combout  & (\cct_input[2]~input_o )) # (!\the_cct|WideOr0~0_combout  & ((\cct_input[0]~input_o )))
 
 	.dataa(\cct_input[2]~input_o ),
-	.datab(\the_cct|or1~0_combout ),
+	.datab(\the_cct|WideOr0~0_combout ),
 	.datac(\cct_input[0]~input_o ),
 	.datad(gnd),
 	.cin(gnd),
@@ -314,31 +314,31 @@ defparam \the_cct|cct_output[0]~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: LCCOMB_X7_Y1_N18
-cycloneive_lcell_comb \the_cct|and1~0 (
+cycloneive_lcell_comb \the_cct|WideAnd0~0 (
 // Equation(s):
-// \the_cct|and1~0_combout  = (\cct_input[7]~input_o  & (\cct_input[5]~input_o  & (\cct_input[4]~input_o  & \cct_input[6]~input_o )))
+// \the_cct|WideAnd0~0_combout  = (\cct_input[7]~input_o  & (\cct_input[5]~input_o  & (\cct_input[4]~input_o  & \cct_input[6]~input_o )))
 
 	.dataa(\cct_input[7]~input_o ),
 	.datab(\cct_input[5]~input_o ),
 	.datac(\cct_input[4]~input_o ),
 	.datad(\cct_input[6]~input_o ),
 	.cin(gnd),
-	.combout(\the_cct|and1~0_combout ),
+	.combout(\the_cct|WideAnd0~0_combout ),
 	.cout());
 // synopsys translate_off
-defparam \the_cct|and1~0 .lut_mask = 16'h8000;
-defparam \the_cct|and1~0 .sum_lutc_input = "datac";
+defparam \the_cct|WideAnd0~0 .lut_mask = 16'h8000;
+defparam \the_cct|WideAnd0~0 .sum_lutc_input = "datac";
 // synopsys translate_on
 
 // Location: LCCOMB_X6_Y1_N18
 cycloneive_lcell_comb \the_cct|cct_output[0]~1 (
 // Equation(s):
-// \the_cct|cct_output[0]~1_combout  = (\the_cct|and1~0_combout  & (\cct_input[3]~input_o )) # (!\the_cct|and1~0_combout  & ((\the_cct|cct_output[0]~0_combout )))
+// \the_cct|cct_output[0]~1_combout  = (\the_cct|WideAnd0~0_combout  & (\cct_input[3]~input_o )) # (!\the_cct|WideAnd0~0_combout  & ((\the_cct|cct_output[0]~0_combout )))
 
 	.dataa(\cct_input[3]~input_o ),
 	.datab(\the_cct|cct_output[0]~0_combout ),
 	.datac(gnd),
-	.datad(\the_cct|and1~0_combout ),
+	.datad(\the_cct|WideAnd0~0_combout ),
 	.cin(gnd),
 	.combout(\the_cct|cct_output[0]~1_combout ),
 	.cout());
@@ -360,10 +360,10 @@ defparam \cct_input[1]~input .simulate_z_as = "z";
 // Location: LCCOMB_X10_Y1_N24
 cycloneive_lcell_comb \the_cct|mux1[1]~0 (
 // Equation(s):
-// \the_cct|mux1[1]~0_combout  = (!\the_cct|or1~0_combout  & \cct_input[1]~input_o )
+// \the_cct|mux1[1]~0_combout  = (!\the_cct|WideOr0~0_combout  & \cct_input[1]~input_o )
 
 	.dataa(gnd),
-	.datab(\the_cct|or1~0_combout ),
+	.datab(\the_cct|WideOr0~0_combout ),
 	.datac(gnd),
 	.datad(\cct_input[1]~input_o ),
 	.cin(gnd),

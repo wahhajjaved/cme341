@@ -6,6 +6,11 @@ module student_circuit_Q5 (
 );
 
 always @ *
-	cct_output  = 8'H5;
+	if (cct_input[4] && cct_input[0])
+		cct_output  = 8'hff;
+	else if (cct_input[4] == 0 && cct_input[0] == 0)
+		cct_output  = 8'h0;
+	else
+		cct_output  = 8'b01110000;
 
 endmodule
