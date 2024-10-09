@@ -6,6 +6,11 @@ module student_circuit_Q3 (
 );
 
 always @ *
-	cct_output  = 8'H3;
+	if (clear)
+		cct_output = 0;
+	else if (cct_input[7])
+		cct_output  = {4{cct_input[1:0]}};
+	else
+		cct_output = ~cct_input;
 
 endmodule

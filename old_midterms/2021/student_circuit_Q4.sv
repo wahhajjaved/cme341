@@ -5,7 +5,18 @@ module student_circuit_Q4 (
 	output reg  [7:0] cct_output
 );
 
-always @ *
-	cct_output  = 8'H4;
+reg [7:0] delay;
+
+always @ (posedge clk)
+	if (clear)
+		delay = 8'd0;
+	else
+		delay = cct_input;
+
+always @ (negedge clk)
+	if (clear)
+		cct_output = 8'd0;
+	else
+		cct_output = ~(cct_input & delay);
 
 endmodule

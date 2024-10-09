@@ -10,8 +10,8 @@ This can be done by answering the questions in separate modules, perhaps named s
 Then one of these modules is instantiated within this module.  For example the answer to question 1, 2, 3, or 4 is answered by uncommenting the instantiation of interest and commenting all others.
  */
 
-student_circuit_preamble the_cct (
-// student_circuit_Q1 the_cct(
+// student_circuit_preamble the_cct (
+student_circuit_Q1 the_cct(
 // student_circuit_Q2 the_cct(
 // student_circuit_Q3 the_cct(
 // student_circuit_Q4 the_cct(

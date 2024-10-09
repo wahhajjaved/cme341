@@ -6,8 +6,10 @@ module student_circuit_Q2 (
 );
 
 
-always @ (posedge clk)
-	cct_output  = 8'H2;
-
+always @ *
+	if (cct_input >= 10 && cct_input <= 99)
+		cct_output = cct_input;
+	else
+		cct_output = cct_input ~^ 8'hc6;
 
 endmodule
