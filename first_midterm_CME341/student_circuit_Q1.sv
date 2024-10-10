@@ -5,7 +5,11 @@ module student_circuit_Q1 (
 	output reg  [7:0] cct_output
 );
 
+
 always @ *
-	cct_output  = 8'H1;
+	if (clear)
+		cct_output  = cct_input - 8'd10;
+	else
+		cct_output  = 8'ha5;
 
 endmodule

@@ -6,6 +6,14 @@ module student_circuit_Q2 (
 );
 
 always @ *
-	cct_output  = 8'H2;
+	if (cct_input[0] == 0 && cct_input < 8'ha5)
+		cct_output = ~cct_input;
+	else if (cct_input[0] == 0 && cct_input > 8'ha5)
+		cct_output = 8'd255 - cct_input;
+	else
+		cct_output = cct_input;
+
+
+
 
 endmodule

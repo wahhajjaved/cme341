@@ -16,6 +16,6 @@ always @ (posedge clk)
 		counter = counter + 8'd1;
 
 always @ *
-	cct_output  = counter;
+	cct_output = counter;
 
 endmodule

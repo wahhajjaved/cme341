@@ -5,12 +5,4 @@ Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
 Top level modules:
 	midterm_1_testbench
 
-} {} {}} /home/.engr-ece/muj975/cme341/first_midterm_CME341/simulation/questa/student_circuit.vo {1 {vlog -work work -vopt -stats=none /home/.engr-ece/muj975/cme341/first_midterm_CME341/simulation/questa/student_circuit.vo
-Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
--- Compiling module student_circuit
--- Compiling module hard_block
-
-Top level modules:
-	student_circuit
-
 } {} {}}

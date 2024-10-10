@@ -20,6 +20,4 @@ or or2(cct_output[4], and1_o, and2_o, and3_o, and4_o);
 
 // cct_output = {0, 0, 0, 0, or2_o, 0, 0, 0};
 
-
-
 endmodule

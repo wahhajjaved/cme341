@@ -11,11 +11,12 @@ Then one of these modules is instantiated within this module.  For example the a
  */
 
 // student_circuit_preamble the_cct (
-student_circuit_Q1 the_cct(
+// student_circuit_Q1 the_cct(
 // student_circuit_Q2 the_cct(
-// student_circuit_Q3 the_cct(
+student_circuit_Q3 the_cct(
 // student_circuit_Q4 the_cct(
 // student_circuit_Q5 the_cct(
+// student_circuit_Q6 the_cct(
   .clk(clk),
   .clear(clear),
   .cct_input(cct_input),

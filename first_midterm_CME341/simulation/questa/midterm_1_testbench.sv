@@ -2,7 +2,7 @@
 module midterm_1_testbench ();
 reg clk, clear;
 reg [7:0] seed, exam_dependent_seed;
-reg [7:0] stimulus; 
+reg [7:0] stimulus;
 wire [7:0] student_output;
 reg counter_full_bar;
 reg [15:0] accumulator_output;
@@ -17,7 +17,7 @@ initial #640 $stop;
 
 // set the exam dependent seed
 
-initial exam_dependent_seed = 8'HAA;
+initial exam_dependent_seed = 8'HEA;
 
 // generate the reset
 
@@ -33,19 +33,19 @@ initial begin # 320 clear = 1'b1; #5.2 clear = 1'b0;
 
         end
  // make the clock
- 
+
  initial clk = 1'b1;
  always #0.5 clk = ~clk; // 1 MHz clock
 
 // seed used in simulation
-initial 
+initial
      begin seed = 8'HAA;
            #320 seed = exam_dependent_seed;
     end
 
 always @ (posedge clk)  //design the accumulator
-if (clear == 1'b1) 
- accumulator_output <= 8'b0;   
+if (clear == 1'b1)
+ accumulator_output <= 8'b0;
 else if (counter_full_bar == 0)
   accumulator_output <= accumulator_output;
 else
@@ -53,8 +53,8 @@ else
 
 
 always @ (posedge clk)  //design the counter
-if (clear == 1'b1) 
- stimulus <= 8'b0;   
+if (clear == 1'b1)
+ stimulus <= 8'b0;
 else if (counter_full_bar == 0)
   stimulus <= stimulus;
 else
@@ -62,7 +62,7 @@ else
          stimulus + 1'b1;
 
 always @ * //design the rotator
-rotator_output = {accumulator_output[14:8], 
+rotator_output = {accumulator_output[14:8],
           adder_output, accumulator_output[15]};
 
 always @ * //design the adder
@@ -78,13 +78,13 @@ else    counter_full_bar = 1'b1;
 
 /* ***************************
  instantiate the .vo file
- that resulted from the student 
+ that resulted from the student
  design
 ******************************/
- 
+
  student_circuit student_cct_1(
           .clk(clk), .clear(clear),
-          .cct_input(stimulus), 
+          .cct_input(stimulus),
 			    .cct_output(student_output)
 			          );
-endmodule 
+endmodule
