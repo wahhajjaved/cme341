@@ -1,0 +1,24 @@
+To, Assignment Name, Value
+binary_input[0], Location, PIN_AC25
+binary_input[1], Location, PIN_AB25
+binary_input[2], Location, PIN_AC24
+binary_input[3], Location, PIN_AB24
+binary_input[4], Location, PIN_AB23
+binary_input[5], Location, PIN_AA24
+binary_input[6], Location, PIN_AA23
+binary_input[7], Location, PIN_AA22
+seven_segments_100[0], Location, PIN_AA25
+seven_segments_100[1], Location, PIN_AA26
+seven_segments_100[2], Location, PIN_Y25
+seven_segments_100[3], Location, PIN_W26
+seven_segments_100[4], Location, PIN_Y26
+seven_segments_100[5], Location, PIN_W27
+seven_segments_100[6], Location, PIN_W28
+remainder_under_100[0], Location, PIN_J17
+remainder_under_100[1], Location, PIN_G17
+remainder_under_100[2], Location, PIN_J15
+remainder_under_100[3], Location, PIN_H16
+remainder_under_100[4], Location, PIN_J16
+remainder_under_100[5], Location, PIN_H17
+remainder_under_100[6], Location, PIN_F15
+remainder_under_100[7], Location, PIN_G15
