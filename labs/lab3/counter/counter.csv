@@ -1,0 +1,16 @@
+To, Assignment Name, Value
+clk, Location, PIN_B14
+clk_out, Location, PIN_AB22
+cnt[3], Location, PIN_AF26
+cnt[2], Location, PIN_AD22
+cnt[1], Location, PIN_AF15
+cnt[0], Location, PIN_AC15
+ena, Location, PIN_M23
+up_down, Location, PIN_AB28
+seven_segments[0], Location, PIN_G18
+seven_segments[1], Location, PIN_F22
+seven_segments[2], Location, PIN_E17
+seven_segments[3], Location, PIN_L26
+seven_segments[4], Location, PIN_L25
+seven_segments[5], Location, PIN_J22
+seven_segments[6], Location, PIN_H22
