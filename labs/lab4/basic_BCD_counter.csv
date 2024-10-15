@@ -1,0 +1,35 @@
+To, Assignment Name, Value
+clk, Location, PIN_B14
+count_enable, Location, PIN_AB25
+sync_clr, Location, PIN_AC25
+
+binary_input[0], Location, PIN_AC25
+binary_input[1], Location, PIN_AB25
+binary_input[2], Location, PIN_AC24
+binary_input[3], Location, PIN_AB24
+binary_input[4], Location, PIN_AB23
+binary_input[5], Location, PIN_AA24
+binary_input[6], Location, PIN_AA23
+binary_input[7], Location, PIN_AA22
+
+hex0[0], Location, PIN_G18
+hex0[1], Location, PIN_F22
+hex0[2], Location, PIN_E17
+hex0[3], Location, PIN_L26
+hex0[4], Location, PIN_L25
+hex0[5], Location, PIN_J22
+hex0[6], Location, PIN_H22
+hex1[0], Location, PIN_M24
+hex1[1], Location, PIN_Y22
+hex1[2], Location, PIN_W21
+hex1[3], Location, PIN_W22
+hex1[4], Location, PIN_W25
+hex1[5], Location, PIN_U23
+hex1[6], Location, PIN_U24
+hex2[0], Location, PIN_AA25
+hex2[1], Location, PIN_AA26
+hex2[2], Location, PIN_Y25
+hex2[3], Location, PIN_W26
+hex2[4], Location, PIN_Y26
+hex2[5], Location, PIN_W27
+hex2[6], Location, PIN_W28
