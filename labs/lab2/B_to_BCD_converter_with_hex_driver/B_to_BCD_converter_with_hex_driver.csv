@@ -7,6 +7,23 @@ binary_input[4], Location, PIN_AB23
 binary_input[5], Location, PIN_AA24
 binary_input[6], Location, PIN_AA23
 binary_input[7], Location, PIN_AA22
+
+seven_segments_1[0], Location, PIN_G18
+seven_segments_1[1], Location, PIN_F22
+seven_segments_1[2], Location, PIN_E17
+seven_segments_1[3], Location, PIN_L26
+seven_segments_1[4], Location, PIN_L25
+seven_segments_1[5], Location, PIN_J22
+seven_segments_1[6], Location, PIN_H22
+
+seven_segments_10[0], Location, PIN_M24
+seven_segments_10[1], Location, PIN_Y22
+seven_segments_10[2], Location, PIN_W21
+seven_segments_10[3], Location, PIN_W22
+seven_segments_10[4], Location, PIN_W25
+seven_segments_10[5], Location, PIN_U23
+seven_segments_10[6], Location, PIN_U24
+
 seven_segments_100[0], Location, PIN_AA25
 seven_segments_100[1], Location, PIN_AA26
 seven_segments_100[2], Location, PIN_Y25
@@ -14,11 +31,12 @@ seven_segments_100[3], Location, PIN_W26
 seven_segments_100[4], Location, PIN_Y26
 seven_segments_100[5], Location, PIN_W27
 seven_segments_100[6], Location, PIN_W28
-remainder_under_100[0], Location, PIN_J17
-remainder_under_100[1], Location, PIN_G17
-remainder_under_100[2], Location, PIN_J15
-remainder_under_100[3], Location, PIN_H16
-remainder_under_100[4], Location, PIN_J16
-remainder_under_100[5], Location, PIN_H17
-remainder_under_100[6], Location, PIN_F15
-remainder_under_100[7], Location, PIN_G15
+
+leds[0], Location, PIN_J17
+leds[1], Location, PIN_G17
+leds[2], Location, PIN_J15
+leds[3], Location, PIN_H16
+leds[4], Location, PIN_J16
+leds[5], Location, PIN_H17
+leds[6], Location, PIN_F15
+leds[7], Location, PIN_G15

@@ -1,0 +1,16 @@
+/home/.engr-ece/muj975/cme341/labs/lab2/B_to_BCD_converter_with_hex_driver/simulation/questa/B_to_BCD_converter_with_hex_driver_test.sv {1 {vlog -work work -vopt -sv -stats=none /home/.engr-ece/muj975/cme341/labs/lab2/B_to_BCD_converter_with_hex_driver/simulation/questa/B_to_BCD_converter_with_hex_driver_test.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module B_to_BCD_converter_with_hex_driver_test
+
+Top level modules:
+	B_to_BCD_converter_with_hex_driver_test
+
+} {} {}} /home/.engr-ece/muj975/cme341/labs/lab2/B_to_BCD_converter_with_hex_driver/simulation/questa/B_to_BCD_converter_with_hex_driver.vo {1 {vlog -work work -vopt -stats=none /home/.engr-ece/muj975/cme341/labs/lab2/B_to_BCD_converter_with_hex_driver/simulation/questa/B_to_BCD_converter_with_hex_driver.vo
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module B_to_BCD_converter_with_hex_driver
+-- Compiling module hard_block
+
+Top level modules:
+	B_to_BCD_converter_with_hex_driver
+
+} {} {}}
