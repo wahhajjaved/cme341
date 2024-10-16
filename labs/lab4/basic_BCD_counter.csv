@@ -1,8 +1,5 @@
 To, Assignment Name, Value
 clk, Location, PIN_B14
-count_enable, Location, PIN_AB25
-sync_clr, Location, PIN_AC25
-
 binary_input[0], Location, PIN_AC25
 binary_input[1], Location, PIN_AB25
 binary_input[2], Location, PIN_AC24
