@@ -38,10 +38,9 @@ BCD_exam exam_1(
 	.v4(a2),
 	.v5(a3),
 	.v6(a4),
-	.v7(7'h3),
-	.v8(7'b1010111),
-	.v9(7'h63),
-	.v10(7'h3c),
+	.v7(a5),
+	.v8(a6),
+	.v9(a7),
 	.result(Hex_display)
 );
 
@@ -54,8 +53,7 @@ sequential_B_to_BCD_converter sbcd1(
 	.clk(CLOCK_27),
 	.hex0(a0),
 	.hex1(a1),
-	.hex2(a2),
-	.hex3(a3)
+	.hex2(a2)
 );
 
 
