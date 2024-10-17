@@ -7,8 +7,7 @@ always @ *
 	case(hex_digit)
 
 		4'h0: hex_segments = 7'b1_000_000;
-		// 4'h1: hex_segments = 7'b1_111_001;
-		4'h1: hex_segments = 7'b1_001_111;
+		4'h1: hex_segments = 7'b1_111_001;
 		4'h2: hex_segments = 7'b0_100_100;
 		4'h3: hex_segments = 7'b0_110_000;
 		4'h4: hex_segments = 7'b0_011_001;
