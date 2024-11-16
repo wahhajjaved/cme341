@@ -26,5 +26,8 @@
         "**/*.wlf":true,
         "**/*.qpf":true,
         "**/*.qsf":true,
-    }
+    },
+    "editor.indentSize": "tabSize",
+    "editor.detectIndentation": true,
+    "editor.insertSpaces": false
 }
