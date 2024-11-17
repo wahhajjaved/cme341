@@ -6,7 +6,7 @@
 - Device family is Cyclone IV E
 - Device name is EP4CE115F29C7
 - In EDA Tool Settings, for Simulation choose Questa Intel FPGA and Verilog HDL.
-    Leave the rest to None
+	Leave the rest to None
 - Click Finish to create the project
 - From the Assignments menu at the top, open the Settings.
 - Under EDA Tool Settings, in Simulation, click on More EDA Netlist Writer Settings
@@ -39,27 +39,27 @@
 [ Hex to Binary ]
 
 1. Separate each hex digit. It represents a string of 4 binary digits.
-    Write the decimal equivalent below each digit
+	Write the decimal equivalent below each digit
 
-    4   f   a
-    4   15  10
+	4   f   a
+	4   15  10
 
 2. Write 8, 4, 2, 1 below each hex digit. These are powers of 2 for bit
-    in the string of 4 binary digits
+	in the string of 4 binary digits
 
-    4       f       a
-    4       15      10
-    8421    8421    8421
+	4       f       a
+	4       15      10
+	8421    8421    8421
 
 
 3. Determine which powers of two (8, 4, 2 or 1) sum up to hex digits.
-    Write 1 below the power that is used and 0 under power that isn't
+	Write 1 below the power that is used and 0 under power that isn't
 
-    4       f       a
-    4       15      10
-    8421    8421    8421
-    ____________________
-    0100    1111    1010
+	4       f       a
+	4       15      10
+	8421    8421    8421
+	____________________
+	0100    1111    1010
 
 
 4. (4FA)16 = (10011111010)2
@@ -71,49 +71,174 @@
 [ Binary to Hex ]
 
 1. Group binary string into groups of 4
-    10101010 = 1010 1010
+	10101010 = 1010 1010
 
 2. Write 8, 4, 2 and 1 below each group.
-    1010	1010
-    8421	8421
+	1010	1010
+	8421	8421
 
 3. Multiply the 8, 4, 2 and 1’s with the digit above.
-    1010	1010
-    8421	8421
-    ____________
-    8020	8020
+	1010	1010
+	8421	8421
+	____________
+	8020	8020
 
 4. Add the products within each set of four.
-    8+0+2+0 = 10
-    8+0+2+0 = 10
+	8+0+2+0 = 10
+	8+0+2+0 = 10
 
 5. Write using hex symbols
-    10 = a
-    11 = b
-    12 = c
-    13 = d
-    14 = e
-    15 = f
+	10 = a
+	11 = b
+	12 = c
+	13 = d
+	14 = e
+	15 = f
 
 
 
 [ Binary - Hex Table ]
 
-    Hex 	Binary
-    ______________
-    0 	    0000
-    1 	    0001
-    2 	    0010
-    3 	    0011
-    4 	    0100
-    5 	    0101
-    6 	    0110
-    7 	    0111
-    8 	    1000
-    9 	    1001
-    A 	    1010
-    B 	    1011
-    C 	    1100
-    D 	    1101
-    E 	    1110
-    F 	    1111
+	Hex 	Binary
+	______________
+	0 	    0000
+	1 	    0001
+	2 	    0010
+	3 	    0011
+	4 	    0100
+	5 	    0101
+	6 	    0110
+	7 	    0111
+	8 	    1000
+	9 	    1001
+	A 	    1010
+	B 	    1011
+	C 	    1100
+	D 	    1101
+	E 	    1110
+	F 	    1111
+
+
+
+[ Microprocessor ]
+
+[ Registers ]
+
+	- One 8-bit pc register
+	- One 8-bit instruction register (ir)
+	- Nine 4-bit data registers
+		ID	 	reg
+		000 	x0
+		001 	x1
+		010 	y0
+		011 	y1
+		100 	r 		when the ID is used in a source register field
+		100 	o_reg 	when the ID is used in a destination register field
+		101 	m
+		110 	i
+		111 	dm 		not a single register, the source or destination is data memory
+
+	- o_reg can only be a destination
+	- r can only be a source
+	- r is only written on ALU instructions
+
+
+[ Instructions ]
+	- Each instruction is 8 bits
+	- Instructions come from the program memory (ROM) and
+		are loaded into the instruction register (ir) on
+		each rising edge of clk
+	- The instruction in the ir is executed on the next
+		rising edge of the clk
+
+	sync reset
+		- If high, ir is ignored and
+			reg_en = 9'h1ff
+			source_sel = 4'd10
+			i_sel  = 1’b0
+			x_sel = 1’b0
+			y_sel = 1’b0
+			jmp = 1’b0
+			jmp_nz  = 1’b0
+		- ir must not be cleared
+
+	Load: 0, dst, dst, dst, data, data, data, data
+
+		- Loads dst with the contents of ir
+		- ir[7] == 0 specifies a load instruction
+		  ir[6 : 4] holds the ID of the destination register
+		  ir[3 : 0] is the four bit constant loaded into the destination register
+
+		- Special case: load data memory. If data is dm, then
+			i = i + m instruction is also executed simultaneously
+
+
+	Mov: 1, 0, dst, dst, dst, src, src, src
+
+		- Move contents of src register into dst register
+		- ir[7] == 1 and ir[6] == 0 specifies a move (mov) instruction
+		  ir[5 : 3] holds the ID of the destination register
+		  ir[2 : 0] holds the ID of the source register
+
+		- If src and dst are both 3'h4, then move r to o_reg
+		- If src and dst are identical but not 3'h4, then
+			move i_pins to dst
+		- If dst = dm or if src = dm and dst != i, then i = i + m
+			is also executed simultaneously
+
+
+	Jump: 1, 1, 1, 0, dst, dst, dst, dst
+
+		- Jump to dst (done be program sequencer)
+		- No registers enabled for this instruction
+
+
+	Conditional Jump: 1, 1, 1, 1, dst, dst, dst, dst
+
+		- Jump to dst if the r register is non-zero (done be program sequencer)
+		- The contents of r is non-zero if and only if the zero flag is not set
+		- No registers enabled for this instruction
+
+
+	ALU Instructions: 1, 1, 0, x_sel, y_sel, func, func, func
+
+		- ir[7 : 6] == 2’b11 and ir[5] == 1’b0 to specify an ALU instruction
+		- x_sel == 0 means x0 is the x operand, x_sel == 1 means x1 is the x operand
+		- y_sel == 0 means y0 is the y operand, y_sel == 1 means y1 is the y operand
+		- x_sel and y_sel have special cases for single operand instructions
+
+		- There are 8 possible ALU operations specifiable by func
+
+			func	other conditions	operation				description
+			--------------------------------------------------------------------
+
+			000 	and y_sel == 0		r = -x					r gets two’s complement of x
+
+			000 	and y_sel == 1		r = r					No operation
+										zero_flag = zero_flag	x_sel may be 0 or 1
+
+			001							r = x - y				unsigned subtraction
+
+			010							r = x + y				unsigned addition
+
+			011							r = (x * y) [7:4]		unsigned multiplication. r is
+																most significant 4 bits of x*y
+
+			100							r = (x * y) [3:0]		unsigned multiplication. r is
+																least significant 4 bits of x*y
+
+			101							r = x ^ y				OR
+
+			110							r = x ^ y				AND
+
+			111 	and y_sel == 0		r = ~x					r gets one's complement of x
+
+			111 	and y_sel == 1		r = r					No operation
+										zero_flag = zero_flag	x_sel may be 0 or 1
+
+
+
+
+
+
+
