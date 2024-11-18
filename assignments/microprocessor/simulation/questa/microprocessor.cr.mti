@@ -20,4 +20,24 @@ Questa Intel Starter FPGA Edition-64 vlog 2023.3 Compiler 2023.07 Jul 17 2023
 Top level modules:
 	program_sequencer_test
 
+} {} {}} /home/.engr-ece/muj975/cme341/assignments/microprocessor/simulation/questa/microprocessor.vo {1 {vlog -work work -vopt -stats=none /home/.engr-ece/muj975/cme341/assignments/microprocessor/simulation/questa/microprocessor.vo
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module instruction_decoder
+-- Compiling module hard_block
+
+Top level modules:
+	instruction_decoder
+
+} {} {}} /home/.engr-ece/muj975/cme341/assignments/microprocessor/test_bench_for_instruction_decoder.v {0 {vlog -work work -vopt -stats=none /home/.engr-ece/muj975/cme341/assignments/microprocessor/test_bench_for_instruction_decoder.v
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module test_bench_for_instruction_decoder
+** Error: (vlog-13069) /home/.engr-ece/muj975/cme341/assignments/microprocessor/test_bench_for_instruction_decoder.v(250): near "0111": syntax error, unexpected INTEGER NUMBER, expecting class.
+
+} {4.0 5.0} {}} /home/.engr-ece/muj975/cme341/assignments/microprocessor/program_sequencer_test.sv {1 {vlog -work work -vopt -sv -stats=none /home/.engr-ece/muj975/cme341/assignments/microprocessor/program_sequencer_test.sv
+Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+-- Compiling module program_sequencer_test
+
+Top level modules:
+	program_sequencer_test
+
 } {} {}}

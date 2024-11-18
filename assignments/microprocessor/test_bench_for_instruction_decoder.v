@@ -246,3 +246,9 @@ module test_bench_for_instruction_decoder ();
     0   jmp
     */
 endmodule
+/*
+0111 1111	Load 1111 into 111
+			Load 1111 into DM_REG
+
+source_sel expected 1001 got 0000
+*/

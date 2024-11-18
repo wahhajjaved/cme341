@@ -9,12 +9,14 @@ module instruction_decoder (
 	output reg x_sel,
 	output reg y_sel,
 	output reg [3:0] source_sel,
-	output reg [8:0] reg_en
+	output reg [8:0] reg_en,
+	output reg [7:0] ir,
+	output reg [7:0] from_ID
 );
 import defs::*;
 
 instruction_t instr;
-reg [7:0] ir;
+
 
 
 always @(posedge clk)
@@ -153,6 +155,8 @@ always @(*)
 		endcase
 	end
 
-
+//exam code
+always @(*)
+	from_ID = 8'h00;
 
 endmodule

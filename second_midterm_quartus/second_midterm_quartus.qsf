@@ -1,6 +1,6 @@
 # -------------------------------------------------------------------------- #
 #
-# Copyright (C) 2024  Intel Corporation. All rights reserved.
+# Copyright (C) 2023  Intel Corporation. All rights reserved.
 # Your use of Intel Corporation's design tools, logic functions 
 # and other software and tools, and any partner logic 
 # functions, and any output files from any of the foregoing 
@@ -18,15 +18,15 @@
 # -------------------------------------------------------------------------- #
 #
 # Quartus Prime
-# Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-# Date created = 13:56:03  November 16, 2024
+# Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
+# Date created = 13:38:20  November 18, 2024
 #
 # -------------------------------------------------------------------------- #
 #
 # Notes:
 #
 # 1) The default values for assignments are stored in the file:
-#		microprocessor_assignment_defaults.qdf
+#		second_midterm_quartus_assignment_defaults.qdf
 #    If this file doesn't exist, see file:
 #		assignment_defaults.qdf
 #
@@ -39,8 +39,9 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name ORIGINAL_QUARTUS_VERSION 23.1STD.1
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:56:03  NOVEMBER 16, 2024"
+set_global_assignment -name TOP_LEVEL_ENTITY second_midterm_quartus
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.2
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:38:20  NOVEMBER 18, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.2 Standard Edition"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
@@ -57,14 +58,14 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_simulation
-set_global_assignment -name TOP_LEVEL_ENTITY instruction_decoder
-set_global_assignment -name SYSTEMVERILOG_FILE defs.sv
-set_global_assignment -name SYSTEMVERILOG_FILE instruction_decoder.sv
-set_global_assignment -name SYSTEMVERILOG_FILE program_sequencer.sv
-set_global_assignment -name SYSTEMVERILOG_FILE microprocessor.sv
-set_global_assignment -name HEX_FILE program_memory.hex
-set_global_assignment -name QIP_FILE program_memory.qip
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name HEX_FILE program_memory_preamble.hex
+set_global_assignment -name SYSTEMVERILOG_FILE defs.sv
+set_global_assignment -name SDC_FILE second_midterm_quartus.sdc
+set_global_assignment -name SYSTEMVERILOG_FILE instruction_decoder.sv
+set_global_assignment -name SYSTEMVERILOG_FILE program_sequencer.sv
+set_global_assignment -name VERILOG_FILE program_memory.v
+set_global_assignment -name VERILOG_FILE second_midterm_quartus.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
