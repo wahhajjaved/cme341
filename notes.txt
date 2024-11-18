@@ -144,6 +144,7 @@
 
 
 [ Instructions ]
+
 	- Each instruction is 8 bits
 	- Instructions come from the program memory (ROM) and
 		are loaded into the instruction register (ir) on
@@ -189,13 +190,13 @@
 
 	Jump: 1, 1, 1, 0, dst, dst, dst, dst
 
-		- Jump to dst (done be program sequencer)
+		- Jump to dst (done by program sequencer)
 		- No registers enabled for this instruction
 
 
 	Conditional Jump: 1, 1, 1, 1, dst, dst, dst, dst
 
-		- Jump to dst if the r register is non-zero (done be program sequencer)
+		- Jump to dst if the r register is non-zero (done by program sequencer)
 		- The contents of r is non-zero if and only if the zero flag is not set
 		- No registers enabled for this instruction
 

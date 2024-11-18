@@ -1,7 +1,7 @@
 module program_sequencer (
 	input wire clk,
 	input wire sync_reset,
-	input wire [3:0] jmp_addr ,
+	input wire [3:0] jmp_addr,
 	input wire jmp,
 	input wire jmp_nz,
 	input wire dont_jmp,
