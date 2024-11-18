@@ -85,19 +85,25 @@ always @(*)
 always @(*)
 	if(sync_reset)
 		source_sel = 4'd10;
+	else if (instr == MOVE && ir[2:0] == ir[5:3])
+		source_sel = 4'd9;
+	else if (instr == MOVE)
+		source_sel = {1'b0, ir[2:0]};
 	else
-		case(instr)
-			LOAD: begin
-				source_sel = 4'd8;
-			end
+		source_sel = 4'd8;
 
-			MOVE: begin
-				source_sel = {1'b0, `MOVE_SRC};
-			end
 
-			default:
-				source_sel = 4'b0;
-		endcase
+	// else
+	// 	case(instr)
+	// 		// LOAD: begin
+	// 		// 	source_sel = 4'd8;
+	// 		// end
+	// 		MOVE: begin
+	// 		end
+
+	// 		default:
+	// 			source_sel = 4'd8;
+	// 	endcase
 
 
 // reg_en

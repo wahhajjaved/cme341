@@ -158,5 +158,6 @@ always @(*)
 //exam code
 always @(*)
 	from_ID = 8'h00;
+	// from_ID = ir;
 
 endmodule
