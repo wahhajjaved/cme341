@@ -32,7 +32,7 @@ initial
 initial #640 $stop;
 
 // set the seed associated with the exam
-initial exam_dependent_seed = 8'HFF;
+initial exam_dependent_seed = 8'H9A;
 
 // seed used in simulation
 initial 
