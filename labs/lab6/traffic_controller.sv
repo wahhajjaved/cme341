@@ -1,6 +1,7 @@
 module traffic_controller (
 	input clk_27,
 	input not_reset,
+	input not_southbound_left_request,
 	input debug,
 	output [6:0] hex7, //northbound
 	output [6:0] hex5, //southbound
@@ -17,6 +18,7 @@ wire northbound_red;
 wire southbound_green;
 wire southbound_amber;
 wire southbound_red;
+wire southbound_left;
 wire eastbound_green;
 wire eastbound_amber;
 wire eastbound_red;
@@ -24,11 +26,6 @@ wire westbound_green;
 wire westbound_amber;
 wire westbound_red;
 
-
-reg [1:0] northbound_colour;
-reg [1:0] southbound_colour;
-reg [1:0] eastbound_colour;
-reg [1:0] westbound_colour;
 
 reg [3:0] counter;
 
@@ -50,12 +47,14 @@ clock clock_1(
 traffic_controller_fsm traffic_controller_fsm_1 (
 	.clk(clk),
 	.reset(reset),
+	.southbound_left_request(~not_southbound_left_request),
 	.northbound_green(northbound_green),
 	.northbound_amber(northbound_amber),
 	.northbound_red(northbound_red),
 	.southbound_green(southbound_green),
 	.southbound_amber(southbound_amber),
 	.southbound_red(southbound_red),
+	.southbound_left(southbound_left),
 	.eastbound_green(eastbound_green),
 	.eastbound_amber(eastbound_amber),
 	.eastbound_red(eastbound_red),
@@ -67,22 +66,22 @@ traffic_controller_fsm traffic_controller_fsm_1 (
 
 
 hex_display_lights northbound_display (
-	.colour({northbound_green, northbound_amber, northbound_red}),
+	.colour({1'b0, northbound_green, northbound_amber, northbound_red}),
 	.hex_segments(hex7)
 );
 
 hex_display_lights southbound_display (
-	.colour({southbound_green, southbound_amber, southbound_red}),
+	.colour({southbound_left, southbound_green, southbound_amber, southbound_red}),
 	.hex_segments(hex5)
 );
 
 hex_display_lights eastbound_display (
-	.colour({eastbound_green, eastbound_amber, eastbound_red}),
+	.colour({1'b0, eastbound_green, eastbound_amber, eastbound_red}),
 	.hex_segments(hex3)
 );
 
 hex_display_lights westbound_display (
-	.colour({westbound_green, westbound_amber, westbound_red}),
+	.colour({1'b0, westbound_green, westbound_amber, westbound_red}),
 	.hex_segments(hex1)
 );
 

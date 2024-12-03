@@ -187,12 +187,7 @@ always @ *
 /*************** State 4a ***************/
 
 always @ *
-	if (reset)
-		southbound_left_request_waiting <= 1'b0;
-	else if (entering_state_4a)
-		southbound_left_request_waiting <= 1'b0;
-	else
-		southbound_left_request_waiting <= southbound_left_request;
+	southbound_left_request_waiting <= southbound_left_request;
 
 
 //state 4a flip flop

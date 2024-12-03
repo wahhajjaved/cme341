@@ -1,7 +1,7 @@
 To, Assignment Name, Value
 clk_27, Location, PIN_B14
 not_reset, Location, PIN_M23
-left_turn_request, Location, PIN_M21
+not_southbound_left_request, Location, PIN_M21
 debug, Location, PIN_AB25
 
 hex0[0], Location, PIN_G18
