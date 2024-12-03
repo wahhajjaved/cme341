@@ -1,8 +1,12 @@
 To, Assignment Name, Value
+
 clk_27, Location, PIN_B14
+debug, Location, PIN_AB25
+
 not_reset, Location, PIN_M23
 not_southbound_left_request, Location, PIN_M21
-debug, Location, PIN_AB25
+not_ns_walk_request, Location, PIN_N21
+not_ew_walk_request, Location, PIN_R24
 
 hex0[0], Location, PIN_G18
 hex0[1], Location, PIN_F22
@@ -20,6 +24,14 @@ hex1[4], Location, PIN_W25
 hex1[5], Location, PIN_U23
 hex1[6], Location, PIN_U24
 
+hex2[0], Location, PIN_AA25
+hex2[1], Location, PIN_AA26
+hex2[2], Location, PIN_Y25
+hex2[3], Location, PIN_W26
+hex2[4], Location, PIN_Y26
+hex2[5], Location, PIN_W27
+hex2[6], Location, PIN_W28
+
 hex3[0], Location, PIN_V21
 hex3[1], Location, PIN_U21
 hex3[2], Location, PIN_AB20
@@ -27,6 +39,14 @@ hex3[3], Location, PIN_AA21
 hex3[4], Location, PIN_AD24
 hex3[5], Location, PIN_AF23
 hex3[6], Location, PIN_Y19
+
+hex4[0], Location, PIN_AB19
+hex4[1], Location, PIN_AA19
+hex4[2], Location, PIN_AG21
+hex4[3], Location, PIN_AH21
+hex4[4], Location, PIN_AE19
+hex4[5], Location, PIN_AF19
+hex4[6], Location, PIN_AE18
 
 hex5[0], Location, PIN_AD18
 hex5[1], Location, PIN_AC18
@@ -36,6 +56,14 @@ hex5[4], Location, PIN_AG19
 hex5[5], Location, PIN_AF18
 hex5[6], Location, PIN_AH18
 
+hex6[0], Location, PIN_AA17
+hex6[1], Location, PIN_AB16
+hex6[2], Location, PIN_AA16
+hex6[3], Location, PIN_AB17
+hex6[4], Location, PIN_AB15
+hex6[5], Location, PIN_AA15
+hex6[6], Location, PIN_AC17
+
 hex7[0], Location, PIN_AD17
 hex7[1], Location, PIN_AE17
 hex7[2], Location, PIN_AG17
@@ -44,4 +72,12 @@ hex7[4], Location, PIN_AF17
 hex7[5], Location, PIN_AG18
 hex7[6], Location, PIN_AA14
 
+
+
+ledg0, Location, PIN_E21
+ledg1, Location, PIN_E22
 ledg2, Location, PIN_E25
+ledg3, Location, PIN_E24
+ledg4, Location, PIN_H21
+ledg5, Location, PIN_G20
+ledg6, Location, PIN_G22
