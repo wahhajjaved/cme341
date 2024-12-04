@@ -16,7 +16,8 @@ module traffic_controller_fsm (
 	output westbound_green, westbound_amber, westbound_red,
 	output westbound_walk, westbound_flashing_dont_walk, westbound_dont_walk,
 
-	output [3:0] t
+	output [3:0] t,
+	output [12:0] s
 );
 
 `define TO timer == 6'd1 //timeout
@@ -27,46 +28,53 @@ reg southbound_left_request_waiting;
 reg walk_request_waiting;
 
 reg entering_state_1w, entering_state_1fd, entering_state_1d, entering_state_1,
-	entering_state_2, entering_state_3, entering_state_4a, entering_state_4w,
-	entering_state_4fd, entering_state_4d, entering_state_4a, entering_state_4,
+	entering_state_2, entering_state_3, entering_state_4w, entering_state_4fd,
+	entering_state_4d, entering_state_4a, entering_state_4,
 	entering_state_5, entering_state_6;
 
 reg staying_in_state_1w, staying_in_state_1fd, staying_in_state_1d, staying_in_state_1,
-	staying_in_state_2, staying_in_state_3, staying_in_state_4a, staying_in_state_4w,
-	staying_in_state_4fd, staying_in_state_4d, staying_in_state_4a, staying_in_state_4,
+	staying_in_state_2, staying_in_state_3, staying_in_state_4w, staying_in_state_4fd,
+	staying_in_state_4d, staying_in_state_4a, staying_in_state_4,
 	staying_in_state_5, staying_in_state_6;
 
 reg state_1w_d, state_1fd_d, state_1d_d, state_1_d,
-	state_2_d, state_3_d, state_4a_d, state_4w_d,
-	state_4fd_d, state_4d_d, state_4a_d, state_4_d,
-	state_5_d, state_6_d;
+	state_2_d, state_3_d, state_4w_d, state_4fd_d,
+	state_4d_d, state_4a_d, state_4_d, state_5_d, state_6_d;
 
 reg state_1w, state_1fd, state_1d, state_1,
-	state_2, state_3, state_4a, state_4w,
-	state_4fd, state_4d, state_4a, state_4,
-	state_5, state_6;
+	state_2, state_3, state_4w, state_4fd,
+	state_4d, state_4a, state_4, state_5, state_6;
 
 
 /********************************************************/
 /*						DEBUG	 						*/
 /********************************************************/
 always @ *
-	t = {3'b0, southbound_left_request_waiting};
+	t = state_1w + state_1fd + state_1d + state_1 +
+		state_2 + state_3 + state_4w + state_4fd +
+		state_4d + state_4a + state_4 + state_5 + state_6;
+	// t = {3'b0, southbound_left_request_waiting};
 	// t = {3'b0, reset};
 	// t = timer[3:0];
 
-
+always @ *
+	s = {state_1w, state_1fd, state_1d, state_1,
+	state_2, state_3, state_4a, state_4w, state_4fd,
+	state_4d, state_4, state_5, state_6};
 
 /********************************************************/
 /* 						Inputs	 						*/
 /********************************************************/
+// always @ *
+// 	if (reset)
+// 		southbound_left_request_waiting <= 1'b0;
+// 	else if (entering_state_4a)
+// 		southbound_left_request_waiting <= 1'b0;
+// 	else
+// 		southbound_left_request_waiting <= southbound_left_request;
+
 always @ *
-	if (reset)
-		southbound_left_request_waiting <= 1'b0;
-	else if (entering_state_4a)
-		southbound_left_request_waiting <= 1'b0;
-	else
-		southbound_left_request_waiting <= southbound_left_request;
+	southbound_left_request_waiting <= southbound_left_request;
 
 
 /*************** walk request ***************/
@@ -249,15 +257,15 @@ always @ *
 //logic for staying in state 1d
 always @ *
 	if (state_1d && `NTO)
-		staying_in_state_1fd <= 1'b1;
+		staying_in_state_1d <= 1'b1;
 	else
-		staying_in_state_1fd <= 1'b0;
+		staying_in_state_1d <= 1'b0;
 
 // d-input for state_1d flip/flop
 always @ *
 	if (entering_state_1d)
 		state_1d_d <= 1'b1;
-	else if (staying_in_state_1fd)
+	else if (staying_in_state_1d)
 		state_1d_d <= 1'b1;
 	else
 		state_1d_d <= 1'b0;

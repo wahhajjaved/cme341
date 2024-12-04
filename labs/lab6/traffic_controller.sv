@@ -7,14 +7,19 @@ module traffic_controller (
 	input not_ns_walk_request,
 	input not_ew_walk_request,
 
-	output [6:0] hex7, //northbound
-	output [6:0] hex5, //southbound
-	output [6:0] hex3, //eastbound
-	output [6:0] hex1, //westbound
-	output [6:0] hex0, //debug
+	output [6:0] hex7,
+	output [6:0] hex6,
+	output [6:0] hex5,
+	output [6:0] hex4,
+	output [6:0] hex3,
+	output [6:0] hex2,
+	output [6:0] hex1,
+	output [6:0] hex0,
 
 	//debug
-	output ledg0, ledg1, ledg2, ledg3
+	output ledg0, ledg2, ledg4, ledg6,
+	// output ledr9
+	output [12:0] LEDR
 );
 
 wire clk;
@@ -42,16 +47,19 @@ reg ew_walk_request;
 /*						DEBUG	 						*/
 /********************************************************/
 reg [3:0] counter;
+reg [12:0] s;
 always @ *
 	ledg0 = reset;
 always @ *
-	ledg1 = southbound_left_request;
+	ledg2 = southbound_left_request;
 always @ *
-	ledg2 = ns_walk_request;
+	ledg4 = ns_walk_request;
 always @ *
-	ledg3 = ew_walk_request;
+	ledg6 = ew_walk_request;
 
 
+always @ *
+	LEDR = s;
 // always @ (posedge clk)
 // 	if (reset)
 // 		counter = 4'h0;
@@ -124,7 +132,8 @@ traffic_controller_fsm traffic_controller_fsm_1 (
 	.westbound_flashing_dont_walk(westbound_flashing_dont_walk),
 	.westbound_dont_walk(westbound_dont_walk),
 
-	.t(counter)
+	.t(counter),
+	.s(s)
 );
 
 
@@ -151,25 +160,36 @@ hex_display_lights westbound_traffic_light (
 
 
 
-hex_display_walk northbound_traffic_light (
+hex_display_walk northbound_walk_light (
+	.clk(clk),
 	.state({northbound_walk, northbound_flashing_dont_walk, northbound_dont_walk}),
 	.hex_segments(hex6)
 );
 
-hex_display_walk southbound_traffic_light (
+hex_display_walk southbound_walk_light (
+	.clk(clk),
 	.state({southbound_walk, southbound_flashing_dont_walk, southbound_dont_walk}),
 	.hex_segments(hex4)
 );
 
-hex_display_walk eastbound_traffic_light (
+hex_display_walk eastbound_walk_light (
+	.clk(clk),
 	.state({eastbound_walk, eastbound_flashing_dont_walk, eastbound_dont_walk}),
 	.hex_segments(hex2)
 );
 
-hex_display_walk westbound_traffic_light (
-	.state({westbound_walk, westbound_flashing_dont_walk, westbound_dont_walk}),
+// hex_display_walk westbound_walk_light (
+// 	.clk(clk),
+// 	.state({westbound_walk, westbound_flashing_dont_walk, westbound_dont_walk}),
+// 	.hex_segments(hex0)
+// );
+
+hex_display_driver d (
+	.hex_digit(counter),
 	.hex_segments(hex0)
 );
+
+
 
 
 

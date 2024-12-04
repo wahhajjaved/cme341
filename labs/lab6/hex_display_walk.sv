@@ -1,4 +1,4 @@
-module hex_display_lights(
+module hex_display_walk(
 	input clk,
 	input [2:0] state, //{walk, flashing_dont_walk, dont_walk}
 	output reg [6:0] hex_segments

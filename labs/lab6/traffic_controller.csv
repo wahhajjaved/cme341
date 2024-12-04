@@ -81,3 +81,23 @@ ledg3, Location, PIN_E24
 ledg4, Location, PIN_H21
 ledg5, Location, PIN_G20
 ledg6, Location, PIN_G22
+
+
+LEDR[0], Location, PIN_G19
+LEDR[1], Location, PIN_F19
+LEDR[2], Location, PIN_E19
+LEDR[3], Location, PIN_F21
+LEDR[4], Location, PIN_F18
+LEDR[5], Location, PIN_E18
+LEDR[6], Location, PIN_J19
+LEDR[7], Location, PIN_H19
+LEDR[8], Location, PIN_J17
+LEDR[9], Location, PIN_G17
+LEDR[10], Location, PIN_J15
+LEDR[11], Location, PIN_H16
+LEDR[12], Location, PIN_J16
+LEDR[13], Location, PIN_H17
+LEDR[14], Location, PIN_F15
+LEDR[15], Location, PIN_G15
+LEDR[16], Location, PIN_G16
+LEDR[17], Location, PIN_H15
