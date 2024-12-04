@@ -1,4 +1,5 @@
-module lab_exam_card_lock( input CLOCK_27,
+module lab_exam_card_lock(
+	input CLOCK_27,
 	input [1:0]SW,
 	output [17:0]LEDR,
 	output [7:0]LEDG,
@@ -15,8 +16,8 @@ module lab_exam_card_lock( input CLOCK_27,
 (*noprune*)wire [9:0]score;
 
 electronic_card_lock ec1(
-	.key_0(fall),
-	.key_1(rise),
+	.key_0(~fall),
+	.key_1(~rise),
 	.card_read(LEDR[17]),
 	.entry_code_on_card(number),
 	.card_type(card_type),
