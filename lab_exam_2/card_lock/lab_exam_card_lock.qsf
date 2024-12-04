@@ -1,0 +1,142 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2023  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 22.1std.2 Build 922 07/20/2023 SC Standard Edition
+# Date created = 18:48:26  December 03, 2024
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		lab_exam_card_lock_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE115F29C7
+set_global_assignment -name TOP_LEVEL_ENTITY lab_exam_card_lock
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 22.1STD.2
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:48:26  DECEMBER 03, 2024"
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.2 Standard Edition"
+set_global_assignment -name QXP_FILE magic_exam_card.qxp
+set_global_assignment -name SYSTEMVERILOG_FILE lab_exam_card_lock.sv
+set_global_assignment -name SDC_FILE lab_exam_card_lock.sdc
+set_global_assignment -name SOURCE_FILE DE2_115_card_pins.csv
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (Verilog)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_location_assignment PIN_B14 -to CLOCK_27
+set_location_assignment PIN_E24 -to LEDG[3]
+set_location_assignment PIN_E25 -to LEDG[2]
+set_location_assignment PIN_E22 -to LEDG[1]
+set_location_assignment PIN_E21 -to LEDG[0]
+set_location_assignment PIN_H15 -to LEDR[17]
+set_location_assignment PIN_G16 -to LEDR[16]
+set_location_assignment PIN_G15 -to LEDR[15]
+set_location_assignment PIN_F15 -to LEDR[14]
+set_location_assignment PIN_H17 -to LEDR[13]
+set_location_assignment PIN_J16 -to LEDR[12]
+set_location_assignment PIN_H16 -to LEDR[11]
+set_location_assignment PIN_J15 -to LEDR[10]
+set_location_assignment PIN_G17 -to LEDR[9]
+set_location_assignment PIN_J17 -to LEDR[8]
+set_location_assignment PIN_H19 -to LEDR[7]
+set_location_assignment PIN_J19 -to LEDR[6]
+set_location_assignment PIN_E18 -to LEDR[5]
+set_location_assignment PIN_F18 -to LEDR[4]
+set_location_assignment PIN_F21 -to LEDR[3]
+set_location_assignment PIN_E19 -to LEDR[2]
+set_location_assignment PIN_F19 -to LEDR[1]
+set_location_assignment PIN_G19 -to LEDR[0]
+set_location_assignment PIN_AC28 -to SW[1]
+set_location_assignment PIN_AB28 -to SW[0]
+set_location_assignment PIN_G18 -to HEXd[0]
+set_location_assignment PIN_F22 -to HEXd[1]
+set_location_assignment PIN_E17 -to HEXd[2]
+set_location_assignment PIN_L26 -to HEXd[3]
+set_location_assignment PIN_L25 -to HEXd[4]
+set_location_assignment PIN_J22 -to HEXd[5]
+set_location_assignment PIN_H22 -to HEXd[6]
+set_location_assignment PIN_M24 -to HEXd[7]
+set_location_assignment PIN_Y22 -to HEXd[8]
+set_location_assignment PIN_W21 -to HEXd[9]
+set_location_assignment PIN_W22 -to HEXd[10]
+set_location_assignment PIN_W25 -to HEXd[11]
+set_location_assignment PIN_U23 -to HEXd[12]
+set_location_assignment PIN_U24 -to HEXd[13]
+set_location_assignment PIN_AA25 -to HEXd[14]
+set_location_assignment PIN_AA26 -to HEXd[15]
+set_location_assignment PIN_Y25 -to HEXd[16]
+set_location_assignment PIN_W26 -to HEXd[17]
+set_location_assignment PIN_Y26 -to HEXd[18]
+set_location_assignment PIN_W27 -to HEXd[19]
+set_location_assignment PIN_W28 -to HEXd[20]
+set_location_assignment PIN_AB19 -to HEXd[21]
+set_location_assignment PIN_AA19 -to HEXd[22]
+set_location_assignment PIN_AG21 -to HEXd[23]
+set_location_assignment PIN_AH21 -to HEXd[24]
+set_location_assignment PIN_AE19 -to HEXd[25]
+set_location_assignment PIN_AF19 -to HEXd[26]
+set_location_assignment PIN_AE18 -to HEXd[27]
+set_location_assignment PIN_AD18 -to HEXd[28]
+set_location_assignment PIN_AC18 -to HEXd[29]
+set_location_assignment PIN_AB18 -to HEXd[30]
+set_location_assignment PIN_AH19 -to HEXd[31]
+set_location_assignment PIN_AG19 -to HEXd[32]
+set_location_assignment PIN_AF18 -to HEXd[33]
+set_location_assignment PIN_AH18 -to HEXd[34]
+set_location_assignment PIN_AA17 -to HEXd[35]
+set_location_assignment PIN_AB16 -to HEXd[36]
+set_location_assignment PIN_AA16 -to HEXd[37]
+set_location_assignment PIN_AB17 -to HEXd[38]
+set_location_assignment PIN_AB15 -to HEXd[39]
+set_location_assignment PIN_AA15 -to HEXd[40]
+set_location_assignment PIN_AC17 -to HEXd[41]
+set_location_assignment PIN_V21 -to rest[0]
+set_location_assignment PIN_U21 -to rest[1]
+set_location_assignment PIN_AB20 -to rest[2]
+set_location_assignment PIN_AA21 -to rest[3]
+set_location_assignment PIN_AD24 -to rest[4]
+set_location_assignment PIN_AF23 -to rest[5]
+set_location_assignment PIN_Y19 -to rest[6]
+set_location_assignment PIN_AD17 -to rest[7]
+set_location_assignment PIN_AE17 -to rest[8]
+set_location_assignment PIN_AG17 -to rest[9]
+set_location_assignment PIN_AH17 -to rest[10]
+set_location_assignment PIN_AF17 -to rest[11]
+set_location_assignment PIN_AG18 -to rest[12]
+set_location_assignment PIN_AA14 -to rest[13]
