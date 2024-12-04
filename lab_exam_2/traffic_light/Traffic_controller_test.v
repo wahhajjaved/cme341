@@ -120,7 +120,8 @@ traffic_controller tc(
 	.west_light_hex(west_hex),
 	.west_walk_hex(west_walk_hex),
 
-	.walk_request_waiting(LEDG[4])
+	.walk_request_waiting(LEDG[4]),
+	.states(LEDR[12:0])
 );
 
 

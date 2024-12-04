@@ -17,7 +17,8 @@ module traffic_controller_fsm (
 	output westbound_walk, westbound_flashing_dont_walk, westbound_dont_walk,
 
 	//debug
-	output walk_request_waiting_debug
+	output walk_request_waiting_debug,
+	output [12:0] states
 );
 
 `define TO timer == 6'd1 //timeout
@@ -57,10 +58,11 @@ reg state_1w, state_1fd, state_1d, state_1,
 	// t = {3'b0, reset};
 	// t = timer[3:0];
 
-// always @ *
-// 	s = {state_1w, state_1fd, state_1d, state_1,
-// 	state_2, state_3, state_4a, state_4w, state_4fd,
-// 	state_4d, state_4, state_5, state_6};
+always @ *
+	states = {state_1w, state_1fd, state_1d, state_1,
+	state_2, state_3, state_4a, state_4w, state_4fd,
+	state_4d, state_4, state_5, state_6};
+
 always @ *
 	walk_request_waiting_debug = walk_request_waiting;
 
@@ -81,23 +83,16 @@ always @ *
 
 /*************** walk request ***************/
 
-// always @ (posedge walk_request or posedge reset or posedge entering_state_1w or posedge entering_state_4w)
-// 	if (reset)
-// 		walk_request_waiting <= 1'b0;
-// 	else if (entering_state_1w || entering_state_4w)
-// 		walk_request_waiting <= 1'b0;
-// 	else if (walk_request_waiting)
-// 		walk_request_waiting <= walk_request_waiting;
-// 	else
-// 		walk_request_waiting <= walk_request;
 
-always @ *
+always @ (posedge clk or posedge reset)
 	if (reset)
-		walk_request_waiting = 1'b0;
+		walk_request_waiting <= 1'b0;
 	else if (entering_state_1w || entering_state_4w)
-		walk_request_waiting = 1'b0;
+		walk_request_waiting <= 1'b0;
+	else if (walk_request_waiting)
+		walk_request_waiting <= walk_request_waiting;
 	else
-		walk_request_waiting = walk_request_waiting || walk_request;
+		walk_request_waiting <= walk_request;
 
 
 

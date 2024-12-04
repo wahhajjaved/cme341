@@ -17,8 +17,8 @@ module traffic_controller (
 	output [6:0] west_walk_hex, //westbound_walk_light
 
 	//debug
-	output walk_request_waiting
-
+	output walk_request_waiting,
+	output [12:0] states
 );
 
 wire clk;
@@ -108,7 +108,8 @@ traffic_controller_fsm traffic_controller_fsm_1 (
 	.westbound_dont_walk(westbound_dont_walk),
 
 
-	.walk_request_waiting_debug(walk_request_waiting)
+	.walk_request_waiting_debug(walk_request_waiting),
+	.states(states)
 );
 
 
