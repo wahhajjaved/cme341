@@ -21,6 +21,7 @@ wire [3:0] LS_nibble_ir;
 wire i_mux_select, y_reg_select, x_reg_select;
 wire [3:0] source_select;
 wire [8:0] reg_enables;
+wire[3:0] data_mem_addr, data_bus, dm;
 
 reg sync_reset;
 always @ (posedge clk)
@@ -30,6 +31,14 @@ program_memory prog_memory(
 	.address(pm_address),
 	.clock(~clk),
 	.q(pm_data)
+);
+
+data_memory memory (
+	.clock(~clk),
+	.address(data_mem_addr),
+	.data(data_bus), //data_in
+	.wren(reg_enables[7]), //enable writing to memory
+	.q(dm) //data_out
 );
 
 program_sequencer prog_sequencer (
@@ -66,6 +75,21 @@ instruction_decoder inst_decoder(
 	.from_ID(from_ID)
 );
 
+computational_unit cu (
+	.clk(clk),
+	.sync_reset(sync_reset),
+	.nibble_ir(LS_nibble_ir),
+	.i_sel(i_mux_select),
+	.y_sel(y_reg_select),
+	.x_sel(x_reg_select),
+	.source_sel(source_select),
+	.reg_en(reg_enables),
+	.dm(dm),
+	.i(data_mem_addr),
+	.data_bus(data_bus),
+	.o_reg(o_reg),
+	.from_CU(from_CU)
+);
 
 
 
