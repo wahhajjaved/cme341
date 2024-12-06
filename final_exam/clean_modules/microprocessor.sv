@@ -72,7 +72,11 @@ instruction_decoder inst_decoder(
 
 	//for exam
 	.ir(instr_register),
-	.from_ID(from_ID)
+	.from_ID(from_ID),
+	.NOPC8(NOPC8),
+	.NOPCF(NOPCF),
+	.NOPD8(NOPD8),
+	.NOPDF(NOPDF)
 );
 
 computational_unit cu (

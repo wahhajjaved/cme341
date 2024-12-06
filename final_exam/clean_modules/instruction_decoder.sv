@@ -48,7 +48,7 @@ module instruction_decoder (
 
 	output reg [7:0] ir,
 	output reg [7:0] from_ID,
-	output wire NOPC8, NOPCF, NOPD8, NOPDF
+	output reg NOPC8, NOPCF, NOPD8, NOPDF
 );
 instruction_t instr;
 
@@ -180,6 +180,39 @@ always @(*)
 
 		endcase
 	end
+
+
+
+//NOPC8	1100 1000	110 = alu instruction, x_sel = 0, y_sel = 1, func = 000
+always @ *
+	if (sync_reset)
+		NOPC8 = 1'b0;
+	else
+		NOPC8 = next_instr == 8'hc8;
+
+
+//NOPCF	1100 1111	110 = alu instruction, x_sel = 0, y_sel = 1, func = 111
+always @ *
+	if (sync_reset)
+		NOPCF = 1'b0;
+	else
+		NOPCF = next_instr == 8'hcf;
+
+
+//NOPD8	1101 1000	110 = alu instruction, x_sel = 1, y_sel = 1, func = 000
+always @ *
+	if (sync_reset)
+		NOPD8 = 1'b0;
+	else
+		NOPD8 = next_instr == 8'hd8;
+
+
+//NOPDF	1101 1111	110 = alu instruction, x_sel = 1, y_sel = 1, func = 000
+always @ *
+	if (sync_reset)
+		NOPDF = 1'b0;
+	else
+		NOPDF = next_instr == 8'hdf;
 
 //exam code
 always @(*)

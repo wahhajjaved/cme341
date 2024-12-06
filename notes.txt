@@ -239,7 +239,12 @@
 
 
 
+	No Op Instructions:
 
+		NOPC8	1100 1000	110 = alu instruction, x_sel = 0, y_sel = 1, func = 000
+		NOPCF	1100 1111	110 = alu instruction, x_sel = 0, y_sel = 1, func = 111
+		NOPD8	1101 1000	110 = alu instruction, x_sel = 1, y_sel = 1, func = 000
+		NOPDF	1101 1111	110 = alu instruction, x_sel = 1, y_sel = 1, func = 000
 
 
 
