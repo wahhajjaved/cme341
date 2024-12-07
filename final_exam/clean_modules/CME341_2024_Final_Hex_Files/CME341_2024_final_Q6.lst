@@ -1,0 +1,18 @@
+    	  		        org 8'H00;
+0000	02		  load x0,#4'H2;
+0001	27		  load y0,#4'H7;
+0002	C0		  neg x0;   r = E, x0 = 3
+0003	D0		  neg x1;   r = 0
+0004	C8		  NOPC8;
+0005	D8		  NOPD8;
+0006	84		  mov x0,r;  x0 = 0
+0007	C7		  com x0;   r = F
+0008	C0		  neg x0;   x0 = 1;
+0009	E1		  jmp trap;
+    	  		  ALIGN
+0010	E1		trap: jmp trap;
+
+
+Symbol Table
+
+        trap	10H

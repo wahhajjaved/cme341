@@ -1,0 +1,20 @@
+    	  		        org 8'H00;
+0000	0F		  load x0, #4'HF;
+0001	C7		  com x0;    r = 4'H0
+0002	F1		  jnz loop;   should not jump
+0003	CF		  NOPCF;
+0004	D8		  NOPD8;
+0005	C8		  NOPC8;     jump to 8'H07
+0006	E1		  jmp loop; shouldn't get here
+0007	C0		  neg x0;   r = 4'H1
+0008	F1		  jnz loop;  should jump
+    	  		 ALIGN
+0010	E1		loop: jmp loop;   trap here
+    	  		
+    	  		
+    	  		
+
+
+Symbol Table
+
+        loop	10H

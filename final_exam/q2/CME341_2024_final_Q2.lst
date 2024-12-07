@@ -1,0 +1,38 @@
+    	  		        org 8'H00;
+0000	50		   load m, 4'H0; This is done to turn off the auto increment of i
+0001	22		   load y0, 4'H2; This means reading or writing
+    	  		                       ; dm[2] will cause a jump to monitor
+0002	61		   load i, 4'H1;  i = 1
+0003	71		   load dm, #4'H1;  dm[1] = 1
+0004	62		   load i, #4'H2;
+0005	7F		   load dm, #4'HF;  jmp to monitor, do not load dm so
+    	  		                          ; so do not enable dm
+0006	E1		   jmp trap
+    	  		   ALIGN
+0010	E1		trap:  jmp trap;
+    	  		
+    	  		     ORG 8'HF0
+00f0	C2		monitor:   add x0,y0;
+00f1	C8		               NOPC8;  a no-operation in part a
+00f2	E1		               jmp trap;  this instruction not executed in part b
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		   
+    	  		
+    	  		
+    	  		
+
+
+Symbol Table
+
+        trap	10H
+     monitor	f0H

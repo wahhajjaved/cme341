@@ -1,0 +1,30 @@
+    	  		    org 8'H0;
+0000	E2		start:  jmp 8'H20;
+    	  		        align
+0010	E1		error:  jmp error;  should not trap here
+    	  		     org 8'H20
+0020	D8		        NOPD8; should not jump
+0021	12		        load x1,4'H2;
+0022	13		        load x1,4'H3;
+0023	14		        load x1,4'H4;
+0024	15		        load x1,4'H5;
+0025	16		        load x1,4'H6;
+0026	17		        load x1,4'H7;
+0027	18		        load x1,4'H8;
+0028	19		        load x1,4'H9;
+0029	D8		        NOPD8;   should jump to 8'H30
+002a	E1		        jmp error;
+    	  		        align
+0030	E3		trap:   jmp trap;  should trap here 
+    	  		
+    	  		         
+
+
+Symbol Table
+
+       start	00H
+       error	10H
+        trap	30H
+10H
+       begin	20H
+        trap	30H

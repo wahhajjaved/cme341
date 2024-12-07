@@ -1,0 +1,17 @@
+    	  		       org 8'H00
+0000	11		   load x1, #4'H1;
+0001	F3		   jnz 8'H30;   spend 4 clock period in ir, i.e. wait an extra 3 
+0002	12		   load x1, #4'H2;
+0003	F0		   jnz 8'H00;  spend just 1 clock period in ir
+0004	13		   load x1, #4'H3;
+0005	E1		   jmp 8'H10;
+    	  		      org 8'H10
+0010	E1		    jmp 8'H10;  trap here\
+    	  		
+    	  		
+    	  		
+    	  		
+
+
+Symbol Table
+

@@ -1,0 +1,35 @@
+    	  		       org 8'H00
+0000	11		   load x1, #4'H1;
+0001	12		   load x1, #4'H2;
+0002	13		   load x1, #4'H3;
+0003	DF		   NOPDF;
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+
+
+Symbol Table
+
+C8		end1:    NOPC8;   part (a) does not get past here
+0006	60		    load i,#4'H0; reset i to 0
+0007	04		    load x0, #4'H4;   load loop_count instruction
+0008	71		loop2:  load dm, #4'H1;   
+0009	9E		     mov y1,i
+000a	DA		     add x1, y1;      
+000b	C8		end2:    NOPC8; 
+000c	E1		         jmp trap;
+    	  		     ALIGN
+0010	E1		trap:   jmp trap;
+
+
+Symbol Table
+
+       loop1	02H
+        end1	05H
+       loop2	08H
+        end2	0bH
+        trap	10H

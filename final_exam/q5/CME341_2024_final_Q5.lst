@@ -1,0 +1,50 @@
+    	  		        org 8'H00;
+0000	68		     load i, #4'H8;  i = 8
+0001	77		    load dm, 4'H7; dm[8] = 7
+0002	11		    load x1, 4'H1;     x1 = 1
+0003	81		    mov x0, x1;        x0 = 1
+0004	02		    load x0, #4'H2;   x0 = 2
+0005	EF		    jmp monitor;
+    	  		   ALIGN
+0010	88		main:   mov x1, x0;     x1 = 2
+0011	8F		     mov x1, dm;        part (a)    x1 = dm[8] = F
+    	  		                      ;         part (b)    x1 = dm_2[8] = 7
+0012	E2		          jmp trap;
+    	  		   ALIGN
+0020	E2		trap:    jmp trap;
+    	  		      org 8'HF0
+    	  		monitor:               
+00f0	04		         load x0, #4'H4;          x0_1 = 4
+00f1	90		        mov y0, x0;                y0  = 4
+00f2	81		         mov x0, x1;               x0_1 = 1
+00f3	7F		        load dm, #4'HF;       part (a):  dm[8] = F
+    	  		                             ;         part (b):  dm_1[8] = F
+00f4	8F		        mov x1, dm;         parts (a) and (b):    x1 = F
+00f5	E1		        jmp main;
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		
+    	  		   
+    	  		
+    	  		
+    	  		
+
+
+Symbol Table
+
+        main	10H
+        trap	20H
+     monitor	f0H
+;
+    	  		
+
+
+Symbol Table
+
+        main	10H
+        trap	20H
+     monitor	f0H

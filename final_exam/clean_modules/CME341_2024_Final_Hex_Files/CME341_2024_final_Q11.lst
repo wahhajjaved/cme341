@@ -1,0 +1,26 @@
+    	  		        org 8'H00;
+0000	51		     load m, #4'H1;  m=1
+0001	01		     load x0, #4'H1;   load loop_count instruction
+0002	71		loop1:    load dm, #4'H1;   
+0003	9E		     mov y1,i;
+0004	DA		     add x1, y1;      
+0005	C8		end1:    NOPC8;   part (a) does not get past here
+0006	60		    load i,#4'H0; reset i to 0
+0007	04		    load x0, #4'H4;   load loop_count instruction
+0008	71		loop2:  load dm, #4'H1;    dm = 1 and i = i+1
+0009	9E		     mov y1,i
+000a	DA		     add x1, y1;      
+000b	C8		end2:    NOPC8; 
+000c	E1		         jmp trap;
+    	  		     ALIGN
+0010	E1		trap:   jmp trap;
+    	  		
+
+
+Symbol Table
+
+       loop1	02H
+        end1	05H
+       loop2	08H
+        end2	0bH
+        trap	10H

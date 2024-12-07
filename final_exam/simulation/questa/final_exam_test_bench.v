@@ -32,7 +32,7 @@ initial #960 $stop;
 
 //set the exam dependent seed
 
-initial exam_dependent_seed = 8'HFF;
+initial exam_dependent_seed = 8'HE1;
 
 // set the seed
 

@@ -1,0 +1,20 @@
+    	  		        org 8'H00;
+0000	29		     load y0, #4'H9;
+0001	05		     load x0, #4'H5;
+0002	31		     load y1, #4'H1;
+0003	DF		     NOPDF; 
+0004	CA		loop1:  add x0, y1;
+0005	84		           mov x0, r;    increment x0
+0006	C0		           neg x0;
+0007	BC		end1:  mov dm,r;
+0008	E1		        jmp trap;
+    	  		       ALIGN
+0010	E1		trap: jmp trap;
+    	  		
+
+
+Symbol Table
+
+       loop1	04H
+        end1	07H
+        trap	10H
