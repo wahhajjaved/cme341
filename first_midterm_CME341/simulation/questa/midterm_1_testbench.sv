@@ -1,4 +1,4 @@
-`timescale 1us/1ns
+`timescale 1us/100ns
 module midterm_1_testbench ();
 reg clk, clear;
 reg [7:0] seed, exam_dependent_seed;

@@ -120,6 +120,9 @@ always @(*)
 always @(*)
 	if(sync_reset)
 		source_sel = 4'd10;
+	// if both the source and destination IDs are 3’H4 then move r to o reg
+	else if (instr == MOVE && `MOVE_SRC == `O_REG && `MOVE_SRC == `MOVE_DST)
+		source_sel = 4'd4;
 	else if (instr == MOVE && `MOVE_SRC == `MOVE_DST)
 		source_sel = 4'd9;
 	else if (instr == MOVE)
@@ -182,7 +185,7 @@ always @(*)
 	end
 
 
-
+//these may need to be clocked
 //NOPC8	1100 1000	110 = alu instruction, x_sel = 0, y_sel = 1, func = 000
 always @ *
 	if (sync_reset)
@@ -216,7 +219,7 @@ always @ *
 
 //exam code
 always @(*)
-	// from_ID = 8'h00;
-	from_ID = reg_en[7:0];
+	from_ID = 8'h00;
+	// from_ID = reg_en[7:0];
 
 endmodule

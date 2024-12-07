@@ -208,7 +208,7 @@
 		- y_sel == 0 means y0 is the y operand, y_sel == 1 means y1 is the y operand
 		- x_sel and y_sel have special cases for single operand instructions
 
-		- There are 8 possible ALU operations specifiable by func
+		- There are 8 possible ALU operations specifiable by func. y_sel = ir[3]
 
 			func	other conditions	operation				description
 			--------------------------------------------------------------------
@@ -228,9 +228,9 @@
 			100							r = (x * y) [3:0]		unsigned multiplication. r is
 																least significant 4 bits of x*y
 
-			101							r = x ^ y				OR
+			101							r = x ^ y				Bitwise XOR
 
-			110							r = x ^ y				AND
+			110							r = x & y				Bitwise AND
 
 			111 	and y_sel == 0		r = ~x					r gets one's complement of x
 
@@ -248,3 +248,24 @@
 
 
 
+[ Computational Unit ]
+
+	sync_reset
+
+		sync_reset in the CU only affects the ALU circuit.
+
+		If sync_reset is high, then alu_out = 4'h0 and alu_out_eq_o = 1'b1.
+		This sets zero flag and clears r. Both of these registers are enabled
+		when sync_reset is high.
+
+		While sync_reset is high, the instruction decoder will set source select to 4'd10, whic
+		in the CU is 4'b0. This results in the CU loading 0 onto the data bus to clear all
+		registers.
+
+	i register
+
+		i is the index register which is used to access the ram.
+		If the data memory is read from or written to, i must be set to i+m
+		on clock edges that execute the instruction.
+		The only exception is the 'move data memory to i' instruction. In this
+		case, i = dm.

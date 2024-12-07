@@ -29,5 +29,6 @@
     },
     "editor.indentSize": "tabSize",
     "editor.detectIndentation": true,
-    "editor.insertSpaces": false
+    "editor.insertSpaces": false,
+    "editor.formatOnType":false
 }

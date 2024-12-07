@@ -29,7 +29,7 @@ always @ (*)
 
 //exam code
 always @(*)
-	// from_PS = 8'h00;
-	from_PS = pc;
+	from_PS = 8'h00;
+	// from_PS = pc;
 
 endmodule

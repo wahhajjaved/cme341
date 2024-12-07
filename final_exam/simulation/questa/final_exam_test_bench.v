@@ -24,6 +24,9 @@ wire [3:0] x0, x1, y0, y1, r, m, i, o_reg;
 wire zero_flag;
 wire NOPC8, NOPCF, NOPD8, NOPDF;
 
+//my debug signals
+wire[3:0] data_bus, source_select, alu_out;
+
 // define the length of the simulation
 initial #960 $stop;
 
@@ -134,12 +137,17 @@ microprocessor   micro_1 (
 	.pm_address(pm_address),
 	.pc(pc),
 	.ir(ir),
-	.register_enables(register_enables),
+	.reg_enables(register_enables),
 	.from_PS(from_PS),
 	.from_ID(from_ID),
 	.from_CU(from_CU),
         .NOPC8(NOPC8),  .NOPCF(NOPCF),
-        .NOPD8(NOPD8), .NOPDF(NOPDF)        );
+        .NOPD8(NOPD8), .NOPDF(NOPDF),
+        //my debug signals
+        .data_bus(data_bus),
+        .source_select(source_select),
+        .alu_out(alu_out)
+        );
 
 
 endmodule

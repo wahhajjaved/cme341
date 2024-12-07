@@ -8,22 +8,26 @@ module microprocessor (
 	output wire [7:0] pc, from_PS, pm_address,
 
 	output wire [7:0] ir, from_ID,
-	output wire [8:0] register_enables,
+	output wire [8:0] reg_enables,
 	output wire NOPC8, NOPCF, NOPD8, NOPDF,
 
 	output wire [7:0] from_CU,
 	output wire [3:0] x0, x1, y0, y1, m, i, r,
-	output wire zero_flag
+	output wire zero_flag,
+
+	//my debug signals
+	output wire[3:0] data_bus, source_select, alu_out
 );
 
+reg sync_reset;
 wire jump, conditional_jump;
 wire [3:0] LS_nibble_ir;
 wire i_mux_select, y_reg_select, x_reg_select;
-wire [3:0] source_select;
-wire [8:0] reg_enables;
-wire[3:0] data_mem_addr, data_bus, dm;
 
-reg sync_reset;
+wire[3:0] data_mem_addr, dm;
+
+assign i = data_mem_addr;
+
 always @ (posedge clk)
 	sync_reset = reset;
 
@@ -71,7 +75,7 @@ instruction_decoder inst_decoder(
 	.reg_en(reg_enables),
 
 	//for exam
-	.ir(instr_register),
+	.ir(ir),
 	.from_ID(from_ID),
 	.NOPC8(NOPC8),
 	.NOPCF(NOPCF),
@@ -88,11 +92,19 @@ computational_unit cu (
 	.x_sel(x_reg_select),
 	.source_sel(source_select),
 	.reg_en(reg_enables),
+	.i_pins(i_pins),
 	.dm(dm),
+
 	.i(data_mem_addr),
 	.data_bus(data_bus),
 	.o_reg(o_reg),
-	.from_CU(from_CU)
+	.r_eq_0(zero_flag),
+
+	.x0(x0), .x1(x1), .y0(y0), .y1(y1), .r(r), .m(m),
+	.from_CU(from_CU),
+
+	//my debug signals
+	.alu_out(alu_out)
 );
 
 
